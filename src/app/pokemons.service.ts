@@ -1,25 +1,33 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of, BehaviorSubject } from 'rxjs';
-import { Poke } from './pokemons';
+import { Pokemon } from './pokemons';
 
 @Injectable()
 export class PokemonsService {
-
-  private apiUrl = "https://pokeapi.co/api/v2";
+  selectedPoke: Pokemon;
+  private apiUrl = "https://pokeapi.co/api/v2/pokemon";
 
   constructor(private http : HttpClient) { 
   }
 
-  getPoke(): Observable<Poke[]> {
-    // return of(ALUNOS);
-    return this.http
-           .get<Poke[]>(this.apiUrl + '&results=20');
+
+
+  getPokemons(): Observable<Pokemon[]> {
+    return this.http.get<Pokemon[]>(this.apiUrl + '?limit=151');
   }
 
-  getPokeById(id:number): Observable<Poke> {
+  getPokemonById(id:number): Observable<Pokemon> {
     console.log(id);
-    return this.http.get<Poke>(this.apiUrl + '$results=1&page=' + id);
+    return this.http.get<Pokemon>(this.apiUrl + '/' + id);
+  }
+
+  selectPokemon(url:string){
+    this.http.get<Pokemon>(url).subscribe(data => {this.selectedPoke = data; console.log(this.selectedPoke)});
+  }
+
+  getSelected(){
+    return this.selectedPoke;
   }
 
 }

@@ -1,3 +1,5 @@
-<p>
-pokemons works!
-</p>
+<ul>
+  <li *ngFor="let pokemon of pokemons" 
+  (click)="selectPokemon(pokemon.url)">{{pokemon.name}}
+    <!-- <a  [title]="pokemon.name" [routerLink]="['/pokemons', pokemonId]" ></a> -->
+</ul>
