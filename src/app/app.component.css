@@ -1,0 +1,12 @@
+html{
+   img: url('https://i.imgur.com/RLK3siV.jpg')
+}
+
+body{
+  background-color: red;
+  
+}
+
+* {
+  font-family: Lato;
+}
