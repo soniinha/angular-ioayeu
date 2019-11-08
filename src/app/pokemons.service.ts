@@ -8,4 +8,8 @@ export class PokemonsService {
 
   constructor(private http : HttpClient) { }
 
+    getAlunos(): Observable<Aluno[]>{
+    return this.http.get<Aluno[]>(this.URLAPI);
+  }
+
 }
