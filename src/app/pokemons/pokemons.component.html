@@ -1,5 +1,9 @@
+<div>
 <ul>
-  <li *ngFor="let pokemon of pokemons" 
-  (click)="selectPokemon(pokemon.url)">{{pokemon.name}}
+  <li *ngFor="let pokemon of pokemons;let index as id" 
+  (click)="selectPokemon(id)">
+  <a >{{pokemon.name}}<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png"/></a>
+  </li>
     <!-- <a  [title]="pokemon.name" [routerLink]="['/pokemons', pokemonId]" ></a> -->
 </ul>
+</div>

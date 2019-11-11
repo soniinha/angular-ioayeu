@@ -18,10 +18,10 @@ export class DetalhesPokemonComponent implements OnInit {
     this.route.paramMap
               .subscribe(params => 
                     this.idPokemonSeleccionado 
-                    = +params.get('idPokemon'));
+                    = +params.get('idPokemonSeleccionado'));
             
     this.pokemonsService.getPokemonById(this.idPokemonSeleccionado)
-              .subscribe(pokemon => {this.selectedPoke = pokemon.results[0];
+              .subscribe(pokemon => {this.selectedPoke = pokemon;
               console.log(this.selectedPoke);});
   }
 

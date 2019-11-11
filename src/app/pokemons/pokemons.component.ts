@@ -18,18 +18,18 @@ export class PokemonsComponent implements OnInit {
   }
 
   getPokemons(): void {
-    //  this.alunos = this.alunosService.getAlunos();
+      this.pokemons = this.pokemonsService.getPokemons();
 
   this.pokemonsService.getPokemons()
                     .subscribe(dados => {
                       this.pokemons = dados.results;
-                      console.log(this.pokemons)
+                      
                       }
                       );
   }
   
-  selectPokemon(url:string){
-    this.pokemonsService.selectPokemon(url);
-    console.log(url);
+  selectPokemon(id:number){
+    this.pokemonsService.selectPokemon(id);
+    
   }
 }
