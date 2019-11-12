@@ -1,8 +1,15 @@
+<div class="row" *ngFor="let pokemon of pokemons" (click)="selectPokemon(pokemon.entry_number)">
+  <div class="col">
+  <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.entry_number}}.png"/>
+  <h3>#{{ pokemon.entry_number}} {{pokemon.pokemon_species.name}} </h3>
+  </div>
+</div>
+
 <div>
 <ul>
-  <li *ngFor="let pokemon of pokemons;let index as id" 
-  (click)="selectPokemon(id)">
-  <a >{{pokemon.name}}<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.id}}.png"/></a>
+  <li *ngFor="let pokemon of pokemons" 
+  (click)="selectPokemon(pokemon.entry_number)">
+  <a >{{pokemon.pokemon_species.name}} {{ pokemon.entry_number}}<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.entry_number}}.png"/></a>
   </li>
     <!-- <a  [title]="pokemon.name" [routerLink]="['/pokemons', pokemonId]" ></a> -->
 </ul>
