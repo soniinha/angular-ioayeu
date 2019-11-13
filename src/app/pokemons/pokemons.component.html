@@ -1,16 +1,24 @@
-<div class="row" *ngFor="let pokemon of pokemons" (click)="selectPokemon(pokemon.entry_number)">
-  <div class="col">
+<div style="text-align: center;">
+  <img src="https://3.bp.blogspot.com/-vorv9HSp_CE/WKbEYs4SthI/AAAAAAAADPQ/Nav0BedwSdkMKZZLudb3mkoIZYhVvZ32QCLcB/s1600/post-pic-1.gif" alt="">
+</div>
+<div class="row">
+  <div class="col" *ngFor="let pokemon of pokemons">
+    <a [title]="pokemon.pokemon_species.name" [routerLink]="['/pokemons', pokemon.entry_number]" >
   <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.entry_number}}.png"/>
-  <h3>#{{ pokemon.entry_number}} {{pokemon.pokemon_species.name}} </h3>
+  <h3>#{{ pokemon.entry_number}} {{pokemon.pokemon_species.name}} </h3></a>
   </div>
 </div>
+<div style="text-align: right; margin-top: 100px" >
+  <img src="https://cdn.bulbagarden.net/upload/thumb/6/66/20th_Anniversary_Mew.png/200px-20th_Anniversary_Mew.png">
+</div>
 
-<div>
+
+<!--<div>
 <ul>
   <li *ngFor="let pokemon of pokemons" 
   (click)="selectPokemon(pokemon.entry_number)">
   <a >{{pokemon.pokemon_species.name}} {{ pokemon.entry_number}}<img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{pokemon.entry_number}}.png"/></a>
   </li>
-    <!-- <a  [title]="pokemon.name" [routerLink]="['/pokemons', pokemonId]" ></a> -->
+    <!-- <a  [title]="pokemon.name" [routerLink]="['/pokemons', pokemonId]" ></a> 
 </ul>
-</div>
+</div> -->

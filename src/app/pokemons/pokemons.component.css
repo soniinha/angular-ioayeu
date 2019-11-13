@@ -1,5 +1,11 @@
+
 .col{
   width: 33.3333%;
   float: left;
   text-align:center;
+}
+
+a{
+  color: black;
+  text-decoration: none;
 }

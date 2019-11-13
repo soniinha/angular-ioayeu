@@ -7,6 +7,7 @@ import { Pokemon } from './pokemon';
 export class PokemonsService {
   selectedPoke: Pokemon;
   private apiUrl = "https://pokeapi.co/api/v2/pokedex/2";
+  private apiPokeUrl = "https://pokeapi.co/api/v2/pokemon/";
 
   constructor(private http : HttpClient) { 
   }
@@ -19,11 +20,7 @@ export class PokemonsService {
 
   getPokemonById(id:number): Observable<Pokemon> {
     console.log(id);
-    return this.http.get<Pokemon>(this.apiUrl + id);
-  }
-
-  selectPokemon(id:number){
-    return this.http.get<Pokemon>(id).subscribe(data => {this.selectedPoke = data; });
+    return this.http.get<Pokemon>(this.apiPokeUrl + id);
   }
 
   getSelected(){

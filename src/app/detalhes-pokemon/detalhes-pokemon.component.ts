@@ -18,7 +18,7 @@ export class DetalhesPokemonComponent implements OnInit {
     this.route.paramMap
               .subscribe(params => 
                     this.idPokemonSeleccionado 
-                    = +params.get('idPokemonSeleccionado'));
+                    = +params.get('idPokemon'));
             
     this.pokemonsService.getPokemonById(this.idPokemonSeleccionado)
               .subscribe(pokemon => {this.selectedPoke = pokemon;

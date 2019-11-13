@@ -12,7 +12,7 @@ import { RouterModule, Routes } from '@angular/router';
 const rotas: Routes = [
   { path: '', component: PokemonsComponent },
   { path: 'pokemons', component: PokemonsComponent},
-  { path: 'pokemons/:idPokemon', component: PokemonsComponent}
+  { path: 'pokemons/:idPokemon', component: DetalhesPokemonComponent}
 ];
 
 @NgModule({

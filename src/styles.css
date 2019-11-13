@@ -1,9 +1,14 @@
 /* Add application styles & imports to this file! */
 body{
-    background-color: #fb0605;
+    background-color: white;
     height: 30%;
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
     background-size: cover;
+    margin:0;
+}
+
+.row{
+  clear: both;
 }
