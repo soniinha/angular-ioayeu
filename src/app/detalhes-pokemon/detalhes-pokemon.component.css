@@ -4,14 +4,15 @@
   background-position: center top;
   width: 100%;
   height: 100vh;
+  text-align:center;
 }
 
 .container{
-  width: 100%;
+  width: 500px;
   text-align: center;
   margin: 0 auto;
   top: 200px;
-  position: absolute;
+  position: relative;
 }
 
 table{
@@ -22,6 +23,11 @@ table{
 img{
   width: 200px;
   height: 200px;
+}
+
+.col{
+  width: 50%;
+  float: left;
 }
 
 
