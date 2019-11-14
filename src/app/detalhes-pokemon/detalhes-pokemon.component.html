@@ -4,28 +4,27 @@
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{selectedPoke.order}}.png"/>
       <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{selectedPoke.order}}.png"/>
       <h3>#{{selectedPoke.id}} {{selectedPoke.name}} </h3>
+      <!--<p>Types: {{ typePoke }}</p>-->
       <div class="row">
         <div class="col">
         <table>
           <tr>
-            <th>Name</th>
+            <th>Stat</th>
             <th>Base Stat</th>
           </tr>
           <tr *ngFor="let stat of selectedPoke.stats">
-            <th>{{stat.stat.name}}</th>
-            <th>{{stat.base_stat}}</th>
+            <td>{{stat.stat.name}}</td>
+            <td>{{stat.base_stat}}</td>
           </tr>
         </table>
         </div>
          <div class="col">
         <table>
           <tr>
-            <th>Name</th>
-            <th>Base Stat</th>
+            <th>Moves</th>
           </tr>
-          <tr *ngFor="let stat of selectedPoke.stats">
-            <th>{{stat.stat.name}}</th>
-            <th>{{stat.base_stat}}</th>
+          <tr *ngFor="let move of selectedPoke.moves; index as count">
+            <td *ngIf="count < 4">{{move.move.name}}</td>
           </tr>
         </table>
         </div>

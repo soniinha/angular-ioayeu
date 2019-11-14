@@ -11,7 +11,7 @@ import { ActivatedRoute } from '@angular/router';
 export class DetalhesPokemonComponent implements OnInit {
   idPokemonSeleccionado: number;
   selectedPoke: Pokemon;
-
+  typePoke: string;
   constructor(private route: ActivatedRoute, private pokemonsService: PokemonsService){}
 
   ngOnInit() {
@@ -23,6 +23,19 @@ export class DetalhesPokemonComponent implements OnInit {
     this.pokemonsService.getPokemonById(this.idPokemonSeleccionado)
               .subscribe(pokemon => {this.selectedPoke = pokemon;
               console.log(this.selectedPoke);});
+
+
+            
   }
+
+  /*getTypePoke(): void{
+    this.typePoke = ""; 
+    console.log(this.selectedPoke.types);
+    for(let i = 0; i <= this.selectedPoke.types.lenght; i++){
+      this.typePoke += this.selectedPoke.types.type.name;
+      console.log(this.selectedPoke.types[i]);
+    }
+    console.log(this.typePoke);
+  };*/
 
 }
