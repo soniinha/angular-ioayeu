@@ -22,20 +22,17 @@ export class DetalhesPokemonComponent implements OnInit {
             
     this.pokemonsService.getPokemonById(this.idPokemonSeleccionado)
               .subscribe(pokemon => {this.selectedPoke = pokemon;
+              this.getTypePoke();
               console.log(this.selectedPoke);});
 
 
             
   }
 
-  /*getTypePoke(): void{
-    this.typePoke = ""; 
-    console.log(this.selectedPoke.types);
-    for(let i = 0; i <= this.selectedPoke.types.lenght; i++){
-      this.typePoke += this.selectedPoke.types.type.name;
-      console.log(this.selectedPoke.types[i]);
-    }
-    console.log(this.typePoke);
-  };*/
+  getTypePoke(): void{
+    this.typePoke = "";
+    this.selectedPoke.types.forEach(t => this.typePoke+= t.type.name + ", ");
+    this.typePoke = this.typePoke.substring(0, this.typePoke.length-2);
+  };
 
 }

@@ -1,10 +1,11 @@
 <div class="fundo">
   <div *ngIf="selectedPoke" class="row">
     <div class="container">
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{selectedPoke.order}}.png"/>
-      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{selectedPoke.order}}.png"/>
-      <h3>#{{selectedPoke.id}} {{selectedPoke.name}} </h3>
-      <!--<p>Types: {{ typePoke }}</p>-->
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/{{selectedPoke.id}}.png"/>
+      <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/{{selectedPoke.id}}.png"/>
+      <h2>#{{selectedPoke.id}} {{selectedPoke.name}} </h2>
+      <p><b>Base experience:</b> {{selectedPoke.base_experience}}</p>
+      <p><b>Types:</b> {{ typePoke }}</p>
       <div class="row">
         <div class="col">
         <table>
@@ -24,7 +25,7 @@
             <th>Moves</th>
           </tr>
           <tr *ngFor="let move of selectedPoke.moves; index as count">
-            <td *ngIf="count < 4">{{move.move.name}}</td>
+            <td *ngIf="count < 6">{{move.move.name}}</td>
           </tr>
         </table>
         </div>
